@@ -25,27 +25,6 @@ const productSchema = new mongoose.Schema({
 
 const Product = mongoose.model('Products', productSchema)
 
-// function generateDummyProducts() {
-//     const products = [];
-
-//     for (let i = 1; i <= 1000; i++) {
-//         const product = {
-//             name: `Product ${i}`,
-//             price: Math.floor(Math.random() * 100) + 1,
-//             description: `This is the description for Product ${i}`,
-//             category: `Category ${Math.floor(Math.random() * 10) + 1}`,
-//         };
-
-//         products.push(product);
-//     }
-//     Product.insertMany(products)
-// }
-
-// app.get('/generateDummyProducts', async function (req, res) {
-//     await generateDummyProducts()
-//     res.send("Products added")
-// })
-
 app.get('/products/:page?/:limit?', async function (req, res) {
     let page = parseInt(req.params.page) || 1;
 
